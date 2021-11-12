@@ -151,10 +151,6 @@ audio.addEventListener("timeupdate", updateProgress);
 audio.addEventListener("volumechange", changeVolume);
 progressContainer.addEventListener("click", setProgress);
 
-// auto play song
-setInterval(playSong(), 1000);
-
-window.addEventListener("load", pauseSong);
 
 // add 0 in time of song when second < 10
 function addZero(second) {
