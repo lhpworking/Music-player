@@ -1,0 +1,190 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    display          : grid;
+    place-items      : center;
+    margin           : 0 auto;
+    height           : 100vh;
+    background       : url("/assets/img/bg.crdownload");
+    background-size  : cover;
+    background-repeat: no-repeat;
+    background-size  : 100%;
+}
+
+* {
+    margin : 0;
+    padding: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.container {
+    display        : flex;
+    flex-direction : column;
+    align-items    : center;
+    justify-content: center;
+    position       : relative;
+}
+
+.container h1 {
+    margin        : 100px 0;
+    font-size     : 52px;
+    color         : #fff;
+    letter-spacing: .2px;
+}
+
+.music-container {
+    position          : relative;
+    display           : flex;
+    background-color  : #fff;
+    border-radius     : 15px;
+    padding           : 20px 40px;
+    box-shadow        : 0px 16px 50px 0px rgba(96, 39, 212, .8);
+    -webkit-box-shadow: 0px 16px 50px 0px rgba(96, 39, 212, .8);
+    -moz-box-shadow   : 0px 16px 50px 0px rgba(96, 39, 212, .8);
+    z-index           : 10;
+
+}
+
+.music-container.play .img-container img {
+    animation-play-state: running;
+}
+
+.music-info {
+    position        : absolute;
+    border-radius   : 15px 15px 0 0;
+    padding         : 10px 40px 10px 120px;
+    text-align      : center;
+    top             : 0;
+    color           : #000;
+    background-color: pink;
+    transform       : translateY(0%);
+    opacity         : 0;
+    width           : calc(100% - 80px);
+    transition      : transform 200ms linear, opacity 0.05s linear;
+}
+
+.music-container.play .music-info {
+    opacity   : 1;
+    transform : translateY(-100%);
+    transition: transform 300ms linear, opacity 0.05s linear;
+}
+
+.music-progress {
+    position        : relative;
+    width           : 100%;
+    background-color: #fff;
+    height          : 5px;
+    border-radius   : 5px;
+    margin          : 10px 0px;
+    margin          : 15px;
+    z-index         : 2;
+}
+
+.music-time-block {
+    display    : flex;
+    align-items: center;
+    gap        : 0 10px;
+}
+
+.time-start,
+.time-end {
+    font-size: 16px;
+}
+
+.progress {
+    position        : relative;
+    width           : 0%;
+    background-color: palevioletred;
+    height          : 5px;
+    border-radius   : 5px;
+}
+
+.progress::after {
+    content         : "";
+    position        : absolute;
+    top             : 50%;
+    right           : -5px;
+    transform       : translate(0, -50%);
+    width           : 10px;
+    height          : 10px;
+    border-radius   : 100%;
+    border          : none;
+    background-color: palevioletred;
+}
+
+.btn {
+    display         : inline-flex;
+    background-color: transparent;
+    outline         : none;
+    border          : none;
+    font-size       : 35px;
+    color           : rgb(241, 148, 179);
+
+}
+
+
+.btn.btn-play {
+    color    : palevioletred;
+    transform: scale(1.5);
+    margin   : 0 40px;
+}
+
+.music-navigation {
+    position    : relative;
+    padding-left: 50px;
+    display     : inline-flex;
+    align-items : center;
+    gap         : 0 10px;
+}
+
+.volume-block {
+    display: flex;
+    gap    : 0 10px;
+    color  : palevioletred;
+}
+
+.volume {
+    accent-color: palevioletred;
+    border      : none;
+    outline     : none;
+
+}
+
+.btn-vol {
+    font-size: 24px;
+}
+
+.img-container {
+    position: relative;
+    width   : 100px;
+}
+
+.img-container img {
+    width               : inherit;
+    height              : 100px;
+    margin-left         : 5px;
+    border-radius       : 50%;
+    object-fit          : cover;
+    position            : absolute;
+    bottom              : 0;
+    left                : 0;
+    animation           : rotate 3s linear infinite;
+    animation-play-state: paused;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

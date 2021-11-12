@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muzic</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- box icon -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="container">
+        <h1><i class="bx bx-music"></i> Muzic Player</h1>
+        <div class="music-container ">
+            <div class="music-info">
+                <h4 class="title">Thay Doi</h4>
+                <div class="music-time-block">
+                    <div class="time-start" id="time-start"></div>
+                    <div class="music-progress">
+                        <div class="progress"></div>
+                    </div>
+                    <div class="time-end" id="time-end"></div>
+                </div>
+            </div>
+            <audio src="" id="audio"></audio>
+            <div class="img-container">
+                <img src="" alt="" id="cover">
+            </div>
+            <div class="music-navigation">
+                <button class="btn btn-prev"><i class='bx bx-skip-previous'></i></button>
+                <button class="btn btn-play"><i class='bx bx-play'></i></button>
+                <button class="btn btn-next"><i class='bx bx-skip-next'></i></button>
+                <span class=" volume-block"><input class=" volume" type="range" name="" value="50" min="0" max="100"
+                        id="volume">
+                    <button class="btn btn-vol"><i class='bx bxs-volume-full'></i></button></span>
+            </div>
+        </div>
+    </div>
+    <!-- box icon -->
+    <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
